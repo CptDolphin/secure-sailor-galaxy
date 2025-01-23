@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel użytkownika</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="panel-header">
+            <h1>Panel użytkownika</h1>
+            <button id="logoutBtn" class="btn btn-secondary">Wyloguj</button>
+        </header>
+
+        <div class="panel-content">
+            <!-- Sekcja bezpieczeństwa -->
+            <section class="panel-section">
+                <h2>Bezpieczeństwo</h2>
+                <div class="security-options">
+                    <div class="option-card">
+                        <h3>Dwuskładnikowe uwierzytelnianie (2FA)</h3>
+                        <div id="twoFactorStatus">Status: Wyłączone</div>
+                        <button id="toggle2FA" class="btn btn-primary">Włącz 2FA</button>
+                        <div id="qrCodeContainer" class="hidden"></div>
+                    </div>
+
+                    <div class="option-card">
+                        <h3>Połączone konta</h3>
+                        <div id="connectedAccounts">
+                            <div class="account-item">
+                                <span>Google</span>
+                                <button class="btn btn-small">Połącz</button>
+                            </div>
+                            <div class="account-item">
+                                <span>Facebook</span>
+                                <button class="btn btn-small">Połącz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sekcja sesji -->
+            <section class="panel-section">
+                <h2>Aktywne sesje</h2>
+                <div id="activeSessions">
+                    <div class="session-info">
+                        <p>Ostatnie logowanie: <span id="lastLoginInfo">-</span></p>
+                    </div>
+                    <button id="logoutAllDevices" class="btn btn-warning">
+                        Wyloguj ze wszystkich urządzeń
+                    </button>
+                </div>
+            </section>
+
+            <!-- Sekcja usuwania konta -->
+            <section class="panel-section danger-zone">
+                <h2>Strefa niebezpieczna</h2>
+                <div class="delete-account">
+                    <button id="deleteAccount" class="btn btn-danger">
+                        Usuń konto
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/panel.js"></script>
+</body>
+</html>
